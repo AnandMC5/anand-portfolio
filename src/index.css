@@ -1,0 +1,1054 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+@import "tailwindcss";
+
+/* =========================================================
+   ROOT / DESIGN SYSTEM
+========================================================= */
+
+:root {
+  font-family: "DM Sans", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --bg-main: #060b16;
+  --bg-secondary: #0a1120;
+  --bg-card: #101a2d;
+
+  --text-main: #f8fafc;
+  --text-secondary: #b8c4d6;
+  --text-muted: #7f8da3;
+
+  --cyan: #38bdf8;
+  --cyan-light: #7dd3fc;
+  --purple: #8b5cf6;
+  --violet: #a78bfa;
+
+  --border: rgba(148, 163, 184, 0.16);
+}
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+html {
+  min-height: 100%;
+  background: var(--bg-main);
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+
+  font-family: "DM Sans", sans-serif;
+
+  color: var(--text-main);
+
+  overflow-x: hidden;
+
+  background:
+    radial-gradient(
+      circle at 10% 5%,
+      rgba(14, 165, 233, 0.14),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(124, 58, 237, 0.13),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(14, 116, 144, 0.06),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #060b16 0%,
+      #091222 45%,
+      #050914 100%
+    );
+
+  background-attachment: fixed;
+}
+
+/* =========================================================
+   GLOBAL AMBIENT LIGHT
+========================================================= */
+
+body::before {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(56, 189, 248, 0.08),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 100% 50%,
+      rgba(139, 92, 246, 0.06),
+      transparent 30%
+    );
+
+  z-index: -10;
+}
+
+/* =========================================================
+   GLOBAL GRID
+========================================================= */
+
+body::after {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(125, 211, 252, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(125, 211, 252, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 70px 70px;
+
+  mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    rgba(0, 0, 0, 0.6) 50%,
+    transparent 100%
+  );
+
+  z-index: -9;
+}
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* =========================================================
+   TYPOGRAPHY
+========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Space Grotesk", sans-serif;
+  color: #f8fafc;
+  letter-spacing: -0.035em;
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =========================================================
+   IMPORTANT TAILWIND TEXT OVERRIDES
+========================================================= */
+
+.text-white {
+  color: #f8fafc !important;
+}
+
+.text-gray-300 {
+  color: #cbd5e1 !important;
+}
+
+.text-gray-400 {
+  color: #aebbd0 !important;
+}
+
+.text-gray-500 {
+  color: #8795aa !important;
+}
+
+.text-gray-600 {
+  color: #738198 !important;
+}
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+section {
+  position: relative;
+}
+
+/* =========================================================
+   PAGE CONTAINER
+========================================================= */
+
+.page-container {
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(56, 189, 248, 0.035),
+      transparent 35%
+    );
+}
+
+/* =========================================================
+   SECTION DIVIDER
+========================================================= */
+
+.section-divider {
+  width: 100%;
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(148, 163, 184, 0.18),
+    transparent
+  );
+}
+
+/* =========================================================
+   HERO BACKGROUND
+========================================================= */
+
+.portfolio-background {
+  position: absolute;
+  inset: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+.portfolio-glow-center {
+  position: absolute;
+
+  left: 50%;
+  top: 42%;
+
+  width: 700px;
+  height: 700px;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(56, 189, 248, 0.14),
+      rgba(99, 102, 241, 0.07) 35%,
+      transparent 70%
+    );
+
+  filter: blur(40px);
+}
+
+.portfolio-orb-one,
+.portfolio-orb-two,
+.portfolio-orb-three {
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(5px);
+
+  animation: portfolioFloat 12s ease-in-out infinite;
+}
+
+.portfolio-orb-one {
+  width: 350px;
+  height: 350px;
+
+  left: -120px;
+  top: 15%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(14, 165, 233, 0.18),
+      transparent 70%
+    );
+}
+
+.portfolio-orb-two {
+  width: 420px;
+  height: 420px;
+
+  right: -160px;
+  top: 15%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(139, 92, 246, 0.17),
+      transparent 70%
+    );
+
+  animation-delay: -4s;
+}
+
+.portfolio-orb-three {
+  width: 300px;
+  height: 300px;
+
+  left: 35%;
+  bottom: -120px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(45, 212, 191, 0.11),
+      transparent 70%
+    );
+
+  animation-delay: -7s;
+}
+
+.portfolio-grid {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0.7;
+
+  background-image:
+    linear-gradient(
+      rgba(125, 211, 252, 0.045) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(125, 211, 252, 0.045) 1px,
+      transparent 1px
+    );
+
+  background-size: 65px 65px;
+
+  mask-image:
+    radial-gradient(
+      ellipse at center,
+      black 0%,
+      transparent 75%
+    );
+}
+
+.portfolio-noise {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0.025;
+
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='.5'/%3E%3C/svg%3E");
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   GLASS CARD
+========================================================= */
+
+.glass-card {
+  position: relative;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(20, 34, 58, 0.94),
+      rgba(8, 17, 32, 0.92)
+    );
+
+  border: 1px solid rgba(125, 211, 252, 0.16);
+
+  box-shadow:
+    0 25px 80px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.glass-card::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 0% 0%,
+      rgba(56, 189, 248, 0.09),
+      transparent 40%
+    );
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(125, 211, 252, 0.3);
+
+  box-shadow:
+    0 35px 100px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(56, 189, 248, 0.06);
+}
+
+/* =========================================================
+   PROJECT / EXPERIENCE / CERTIFICATION CARDS
+========================================================= */
+
+.project-card,
+.experience-card,
+.certification-card,
+.skill-card {
+  border: 1px solid rgba(148, 163, 184, 0.15);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(18, 32, 55, 0.92),
+      rgba(7, 16, 30, 0.9)
+    );
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.28);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.project-card:hover,
+.experience-card:hover,
+.certification-card:hover,
+.skill-card:hover {
+  transform: translateY(-5px);
+
+  border-color: rgba(125, 211, 252, 0.28);
+
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, 0.4),
+    0 0 35px rgba(56, 189, 248, 0.04);
+}
+
+/* =========================================================
+   HERO TEXT
+========================================================= */
+
+.glow-text {
+  text-shadow:
+    0 0 50px rgba(125, 211, 252, 0.08);
+}
+
+.gradient-text {
+  background:
+    linear-gradient(
+      110deg,
+      #f8fafc 0%,
+      #7dd3fc 35%,
+      #a78bfa 70%,
+      #67e8f9 100%
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent !important;
+
+  background-size: 200% auto;
+
+  animation: gradientMove 8s ease infinite;
+}
+
+/* =========================================================
+   PRIMARY BUTTON
+   THIS IS THE BUTTON USED BY:
+   Explore Projects
+   View Case Study
+========================================================= */
+
+.portfolio-primary-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.6rem;
+
+  min-height: 44px;
+
+  padding: 0.75rem 1.25rem;
+
+  border-radius: 9999px;
+
+  border: 1px solid rgba(125, 211, 252, 0.25);
+
+  background:
+    linear-gradient(
+      135deg,
+      #e0f2fe 0%,
+      #bae6fd 45%,
+      #7dd3fc 100%
+    );
+
+  color: #06111f !important;
+
+  font-family: "DM Sans", sans-serif;
+
+  font-size: 0.875rem;
+
+  font-weight: 700;
+
+  box-shadow:
+    0 12px 35px rgba(56, 189, 248, 0.18);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
+}
+
+.portfolio-primary-button span {
+  color: #06111f !important;
+}
+
+.portfolio-primary-button svg {
+  color: #06111f !important;
+}
+
+.portfolio-primary-button:hover {
+  transform:
+    translateY(-3px)
+    scale(1.02);
+
+  filter: brightness(1.05);
+
+  box-shadow:
+    0 18px 55px rgba(56, 189, 248, 0.3);
+}
+
+/* =========================================================
+   SECONDARY BUTTON
+========================================================= */
+
+.portfolio-secondary-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.6rem;
+
+  min-height: 44px;
+
+  padding: 0.75rem 1.25rem;
+
+  border-radius: 9999px;
+
+  border: 1px solid rgba(148, 163, 184, 0.25);
+
+  background:
+    rgba(15, 23, 42, 0.82);
+
+  color: #e2e8f0 !important;
+
+  font-weight: 600;
+
+  backdrop-filter: blur(14px);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.portfolio-secondary-button:hover {
+  transform: translateY(-3px);
+
+  background:
+    rgba(30, 41, 59, 0.95);
+
+  border-color:
+    rgba(125, 211, 252, 0.35);
+}
+
+/* =========================================================
+   CASE STUDY BUTTON
+   Used only by "View Case Study"
+========================================================= */
+
+.case-study-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+
+  min-height: 44px;
+  padding: 0.75rem 1.25rem;
+
+  border-radius: 9999px;
+
+  border: 1px solid rgba(167, 139, 250, 0.45);
+
+  background: linear-gradient(
+    135deg,
+    #7c3aed 0%,
+    #8b5cf6 50%,
+    #6366f1 100%
+  );
+
+  color: #ffffff !important;
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+
+  box-shadow:
+    0 12px 35px rgba(124, 58, 237, 0.22);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
+}
+
+.case-study-button span {
+  color: #ffffff !important;
+}
+
+.case-study-button svg {
+  color: #ffffff !important;
+}
+
+.case-study-button:hover {
+  transform:
+    translateY(-3px)
+    scale(1.02);
+
+  filter: brightness(1.08);
+
+  box-shadow:
+    0 18px 55px rgba(124, 58, 237, 0.38);
+}
+
+/* =========================================================
+   TECH TAGS
+========================================================= */
+
+.tech-tag {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 0.4rem 0.8rem;
+
+  border-radius: 9999px;
+
+  border: 1px solid rgba(148, 163, 184, 0.17);
+
+  background:
+    rgba(15, 23, 42, 0.65);
+
+  color: #b9c7da;
+
+  font-size: 0.75rem;
+
+  backdrop-filter: blur(10px);
+}
+
+.tech-tag:hover {
+  border-color: rgba(125, 211, 252, 0.35);
+
+  background:
+    rgba(56, 189, 248, 0.08);
+
+  color: #e0f2fe;
+}
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar-glass {
+  background:
+    rgba(7, 13, 25, 0.9);
+
+  border:
+    1px solid rgba(148, 163, 184, 0.14);
+
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+
+  box-shadow:
+    0 15px 50px rgba(0, 0, 0, 0.25);
+}
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+input,
+textarea,
+select {
+  font-family: "DM Sans", sans-serif;
+
+  color: #e8f0fb !important;
+
+  background:
+    rgba(15, 23, 42, 0.85) !important;
+
+  border-color:
+    rgba(148, 163, 184, 0.2) !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #718096 !important;
+}
+
+/* =========================================================
+   SELECTION
+========================================================= */
+
+::selection {
+  background: rgba(56, 189, 248, 0.3);
+  color: #ffffff;
+}
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050914;
+}
+
+::-webkit-scrollbar-thumb {
+  background:
+    linear-gradient(
+      180deg,
+      #334155,
+      #475569
+    );
+
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background:
+    linear-gradient(
+      180deg,
+      #38bdf8,
+      #8b5cf6
+    );
+}
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.image-hover {
+  overflow: hidden;
+}
+
+.image-hover img {
+  transition:
+    transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 0.7s ease;
+}
+
+.image-hover:hover img {
+  transform: scale(1.04);
+
+  filter:
+    brightness(1.05)
+    contrast(1.02);
+}
+
+/* =========================================================
+   FOCUS
+========================================================= */
+
+button:focus-visible,
+a:focus-visible {
+  outline:
+    2px solid rgba(125, 211, 252, 0.65);
+
+  outline-offset: 4px;
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+  body::after {
+    background-size: 50px 50px;
+  }
+
+  .portfolio-glow-center {
+    width: 400px;
+    height: 400px;
+  }
+
+  .portfolio-orb-one {
+    width: 180px;
+    height: 180px;
+  }
+
+  .portfolio-orb-two {
+    width: 220px;
+    height: 220px;
+  }
+
+  .portfolio-orb-three {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes portfolioFloat {
+  0%,
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translate3d(0, -30px, 0)
+      scale(1.05);
+  }
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes shimmerMove {
+  0% {
+    transform: translateX(-140%);
+  }
+
+  45%,
+  100% {
+    transform: translateX(220%);
+  }
+}
+
+/* =========================================================
+   SHIMMER
+========================================================= */
+
+.shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+  left: 0;
+
+  width: 50%;
+
+  background:
+    linear-gradient(
+      110deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent
+    );
+
+  transform: translateX(-140%);
+
+  animation: shimmerMove 4s infinite;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* =========================================================
+   CASE STUDY GITHUB BUTTON
+========================================================= */
+
+.case-study-github-button {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+
+  min-height: 46px;
+  padding: 0.75rem 1.35rem;
+
+  border: 1px solid rgba(56, 189, 248, 0.35) !important;
+  border-radius: 9999px;
+
+  background: linear-gradient(
+    135deg,
+    #0891b2 0%,
+    #2563eb 55%,
+    #4f46e5 100%
+  ) !important;
+
+  color: #ffffff !important;
+
+  font-size: 0.875rem;
+  font-weight: 700;
+
+  text-decoration: none !important;
+
+  box-shadow:
+    0 10px 30px rgba(37, 99, 235, 0.25);
+
+  transition:
+    transform 0.25s ease,
+    filter 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.case-study-github-button span {
+  color: #ffffff !important;
+}
+
+.case-study-github-button svg {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+}
+
+.case-study-github-button:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.08);
+
+  border-color: rgba(125, 211, 252, 0.7) !important;
+
+  box-shadow:
+    0 16px 45px rgba(37, 99, 235, 0.35),
+    0 0 25px rgba(56, 189, 248, 0.15);
+}
+
+.case-study-github-button:focus-visible {
+  outline: 3px solid rgba(125, 211, 252, 0.7);
+  outline-offset: 4px;
+}
+
+
+/* =========================================================
+   CASE STUDY LIVE DEMO BUTTON
+========================================================= */
+
+.case-study-live-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+
+  min-height: 46px;
+  padding: 0.75rem 1.35rem;
+
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 9999px;
+
+  background: rgba(15, 23, 42, 0.75);
+
+  color: #cbd5e1 !important;
+
+  font-size: 0.875rem;
+  font-weight: 600;
+
+  text-decoration: none !important;
+
+  backdrop-filter: blur(14px);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.case-study-live-button:hover {
+  transform: translateY(-3px);
+
+  background: rgba(30, 41, 59, 0.95);
+
+  border-color: rgba(125, 211, 252, 0.4);
+
+  color: #ffffff !important;
+}
