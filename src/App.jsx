@@ -8,12 +8,12 @@ import {
   Menu,
   X,
   Download,
-  ExternalLink,
   MapPin,
   BriefcaseBusiness,
   Code2,
 } from "lucide-react";
 
+import Awards from "./components/Awards";
 import Hero from "./components/Hero";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
@@ -32,8 +32,20 @@ const navigation = [
   { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
   { label: "Certifications", href: "#certifications" },
+  { label: "Awards & Kudos", href: "#awards" },
   { label: "Contact", href: "#contact" },
 ];
+
+/* =========================================================
+   SOCIAL LINKS
+========================================================= */
+
+const socialLinks = {
+  github: "https://github.com/AnandMC5",
+  linkedin: "https://www.linkedin.com/in/anand-m-c-aa145526b/",
+  leetcode: "https://leetcode.com/u/Anandmc_7777/",
+  hackerrank: "https://www.hackerrank.com/profile/anandmc234",
+};
 
 /* =========================================================
    MAIN PORTFOLIO
@@ -93,6 +105,7 @@ function Portfolio() {
               "linear-gradient(to bottom, black, transparent 90%)",
           }}
         />
+
       </div>
 
       {/* =====================================================
@@ -119,6 +132,7 @@ function Portfolio() {
                 </div>
 
                 <div className="hidden sm:block">
+
                   <p className="text-sm font-semibold tracking-wide text-white">
                     Anand M C
                   </p>
@@ -126,6 +140,7 @@ function Portfolio() {
                   <p className="text-[10px] uppercase tracking-[0.2em] text-slate-500">
                     Data • AI • Engineering
                   </p>
+
                 </div>
 
               </button>
@@ -157,7 +172,7 @@ function Portfolio() {
                 Resume
               </a>
 
-              {/* MOBILE */}
+              {/* MOBILE MENU BUTTON */}
 
               <button
                 onClick={() => setMobileMenu(!mobileMenu)}
@@ -205,7 +220,10 @@ function Portfolio() {
           HERO
       ===================================================== */}
 
-      <div className="relative z-10">
+      <div
+        id="home"
+        className="relative z-10"
+      >
         <Hero />
       </div>
 
@@ -253,13 +271,25 @@ function Portfolio() {
 
             <div className="grid grid-cols-2 gap-4">
 
-              <Stat value="100M+" label="Records Migrated" />
+              <Stat
+                value="100M+"
+                label="Records Migrated"
+              />
 
-              <Stat value="3+" label="AI Projects" />
+              <Stat
+                value="3+"
+                label="AI Projects"
+              />
 
-              <Stat value="3+" label="Telecom OpCos" />
+              <Stat
+                value="3+"
+                label="Telecom OpCos"
+              />
 
-              <Stat value="3+" label="Years Experience" />
+              <Stat
+                value="3+"
+                label="Years Experience"
+              />
 
             </div>
 
@@ -314,6 +344,17 @@ function Portfolio() {
       </div>
 
       {/* =====================================================
+          KUDOS & KIITOS
+      ===================================================== */}
+
+      <div
+        id="awards"
+        className="relative z-10 scroll-mt-28"
+      >
+        <Awards />
+      </div>
+
+      {/* =====================================================
           CONTACT
       ===================================================== */}
 
@@ -325,107 +366,151 @@ function Portfolio() {
         <div className="mx-auto max-w-7xl">
 
           <SectionHeading
-            eyebrow="07 / Contact"
+            eyebrow="08 / Contact"
             title="Let's build something useful."
             description="If you're hiring for data engineering, AI engineering or migration roles, I'd be happy to connect."
           />
 
           <div className="mt-16 grid gap-6 lg:grid-cols-[1fr_0.7fr]">
 
-            {/* Email + Mobile */}
+            {/* =================================================
+                EMAIL + MOBILE
+            ================================================= */}
 
-              <div className="grid gap-6 md:grid-cols-2">
+            <div className="grid gap-6 md:grid-cols-2">
 
-                {/* Email card */}
-                <a
-                  href="mailto:anandmc234@gmail.com"
-                  className="group rounded-2xl border border-white/6 bg-white/[0.020] p-8 transition hover:border-cyan-400/30 hover:bg-cyan-400/[0.04] md:p-5"
-                >
-                  <div className="flex items-start justify-between">
+              {/* EMAIL */}
 
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.05]">
-                      <Mail size={20} className="text-cyan-300" />
-                    </div>
+              <a
+                href="mailto:anandmc234@gmail.com"
+                className="group rounded-2xl border border-white/6 bg-white/[0.020] p-8 transition hover:border-cyan-400/30 hover:bg-cyan-400/[0.04] md:p-5"
+              >
 
-                    <ArrowUpRight
-                      size={22}
-                      className="text-gray-600 transition group-hover:text-cyan-300"
+                <div className="flex items-start justify-between">
+
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.05]">
+
+                    <Mail
+                      size={20}
+                      className="text-cyan-300"
                     />
 
                   </div>
 
-                  <p className="mt-10 text-xs uppercase tracking-[0.25em] text-gray-500">
-                    Email
-                  </p>
+                  <ArrowUpRight
+                    size={22}
+                    className="text-gray-600 transition group-hover:text-cyan-300"
+                  />
 
-                  <h3 className="mt-3 break-all text-xl font-semibold text-white md:text-2xl">
-                    anandmc234@gmail.com
-                  </h3>
+                </div>
 
-                  <p className="mt-3 text-sm text-gray-500">
-                    Click to send me an email
-                  </p>
+                <p className="mt-10 text-xs uppercase tracking-[0.25em] text-gray-500">
+                  Email
+                </p>
 
-                </a>
+                <h3 className="mt-3 break-all text-xl font-semibold text-white md:text-2xl">
+                  anandmc234@gmail.com
+                </h3>
 
+                <p className="mt-3 text-sm text-gray-500">
+                  Click to send me an email
+                </p>
 
-                {/* Mobile */}
-                <a
-                  href="tel:+919535987114"
-                  className="group rounded-3xl border border-white/10 bg-white/[0.025] p-8 transition hover:border-emerald-400/30 hover:bg-emerald-400/[0.04] md:p-5"
-                >
-                  <div className="flex items-start justify-between">
+              </a>
 
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.05]">
-                      <Phone size={21} className="text-emerald-300" />
-                    </div>
+              {/* MOBILE */}
 
-                    <ArrowUpRight
-                      size={22}
-                      className="text-gray-600 transition group-hover:text-emerald-300"
+              <a
+                href="tel:+919535987114"
+                className="group rounded-3xl border border-white/10 bg-white/[0.025] p-8 transition hover:border-emerald-400/30 hover:bg-emerald-400/[0.04] md:p-5"
+              >
+
+                <div className="flex items-start justify-between">
+
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.05]">
+
+                    <Phone
+                      size={21}
+                      className="text-emerald-300"
                     />
 
                   </div>
 
-                  <p className="mt-10 text-xs uppercase tracking-[0.25em] text-gray-500">
-                    Mobile
-                  </p>
+                  <ArrowUpRight
+                    size={22}
+                    className="text-gray-600 transition group-hover:text-emerald-300"
+                  />
 
-                  <h3 className="mt-3 text-xl font-semibold text-white md:text-2xl">
-                    +91 9535987114
-                  </h3>
+                </div>
 
-                  <p className="mt-3 text-sm text-gray-500">
-                    Click to call me
-                  </p>
+                <p className="mt-10 text-xs uppercase tracking-[0.25em] text-gray-500">
+                  Mobile
+                </p>
 
-                </a>
+                <h3 className="mt-3 text-xl font-semibold text-white md:text-2xl">
+                  +91 9535987114
+                </h3>
 
-              </div>
-            {/* SOCIAL */}
+                <p className="mt-3 text-sm text-gray-500">
+                  Click to call me
+                </p>
+
+              </a>
+
+            </div>
+
+            {/* =================================================
+                SOCIAL LINKS
+            ================================================= */}
 
             <div className="grid gap-6">
 
+              {/* GITHUB */}
+
               <SocialCard
-                href="https://github.com/AnandMC5"
+                href={socialLinks.github}
                 icon={<Code2 size={20} />}
                 title="GitHub"
                 description="github.com/AnandMC5"
               />
 
+              {/* LINKEDIN */}
+
               <SocialCard
-                href="https://www.linkedin.com/in/anand-m-c-aa145526b/"
+                href={socialLinks.linkedin}
                 icon={<BriefcaseBusiness size={20} />}
                 title="LinkedIn"
                 description="Connect with me"
               />
+
+              {/* LEETCODE */}
+
+              <SocialCard
+                href={socialLinks.leetcode}
+                icon={<Code2 size={20} />}
+                title="LeetCode"
+                description="leetcode.com/u/Anandmc_7777"
+              />
+
+              {/* HACKERRANK */}
+
+              <SocialCard
+                href={socialLinks.hackerrank}
+                icon={<Code2 size={20} />}
+                title="HackerRank"
+                description="hackerrank.com/profile/anandmc234"
+              />
+
+              {/* LOCATION */}
 
               <div className="rounded-3xl border border-white/[0.09] bg-[#0c1729]/80 p-7 shadow-xl backdrop-blur-xl">
 
                 <div className="flex items-center gap-4">
 
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-cyan-400/20 bg-cyan-400/[0.08] text-cyan-300">
+
                     <MapPin size={20} />
+
                   </div>
 
                   <div>
@@ -464,10 +549,12 @@ function Portfolio() {
             © 2026 Anand M C. Built with React.
           </p>
 
-          <div className="flex items-center gap-5">
+          <div className="flex flex-wrap items-center gap-5">
+
+            {/* GITHUB */}
 
             <a
-              href="https://github.com/AnandMC5"
+              href={socialLinks.github}
               target="_blank"
               rel="noopener noreferrer"
               className="transition hover:text-cyan-300"
@@ -475,13 +562,37 @@ function Portfolio() {
               GitHub
             </a>
 
+            {/* LINKEDIN */}
+
             <a
-              href="https://www.linkedin.com/in/anand-m-c-aa145526b/"
+              href={socialLinks.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               className="transition hover:text-cyan-300"
             >
               LinkedIn
+            </a>
+
+            {/* LEETCODE */}
+
+            <a
+              href={socialLinks.leetcode}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition hover:text-cyan-300"
+            >
+              LeetCode
+            </a>
+
+            {/* HACKERRANK */}
+
+            <a
+              href={socialLinks.hackerrank}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition hover:text-cyan-300"
+            >
+              HackerRank
             </a>
 
           </div>

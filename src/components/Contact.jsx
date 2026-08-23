@@ -17,6 +17,16 @@ const contactLinks = [
     value: "linkedin.com/in/anand-m-c-aa145526b",
     href: "https://www.linkedin.com/in/anand-m-c-aa145526b/",
   },
+  {
+    label: "LeetCode",
+    value: "leetcode.com/u/Anandmc_7777",
+    href: "https://leetcode.com/u/Anandmc_7777/",
+  },
+  {
+    label: "HackerRank",
+    value: "hackerrank.com/profile/anandmc234",
+    href: "https://www.hackerrank.com/profile/anandmc234",
+  },
 ];
 
 export default function Contact() {
